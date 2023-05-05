@@ -72,7 +72,7 @@ export default function DetailZaznam(){
                     return Object.values(zaznam)[j].map( (prvok, index) => {
                             return <div key = {index}>
                                         {index === 0 ? <div className = "row" > Klučové slová  </div>: <></>}
-                                        <div>          
+                                        <div style={{display: "inline-block", maxWidth: "100%"}} >          
                                             <li>{prvok.nazovKlucovehoSlova} </li>
                                         </div>   
                                     </div>
@@ -99,7 +99,7 @@ export default function DetailZaznam(){
                 if(kat === "komentare" && Object.values(zaznam)[j].length >0){
                     return Object.values(zaznam)[j].map( (prvok, index) => {
                         return <div key = {index}>
-                                    <div  className = "row"> Komentár:          
+                                    <div  className = "row" style={{display: "inline-block", maxWidth: "100%"}}> Komentár:          
                                         {prvok.obsah} 
                                     </div>       
                                </div>

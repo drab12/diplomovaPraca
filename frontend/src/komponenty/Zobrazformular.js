@@ -454,7 +454,7 @@ return(
             <Klucoveslova slova={pridajSlovaKzaznamu} update={props.update} slovaZaznamu={formData.klucoveSlova} odp ={props.odporucaneSlova}/>      
             <div className = "container">
                     <div className = "row">
-                        <div className = "card col-md-6 offset-md-3 offset-md-3">
+                        <div className = "card col-md-10 offset-md-3 offset-md-3">
                            <h3 className="text-center"> {props.update? "Uprav" :"Pridaj"} {props.vybranaKategoria!== undefined? 
                                                                                             props.vybranaKategoria.nazov:""} </h3>
                             <div className = "card-body">

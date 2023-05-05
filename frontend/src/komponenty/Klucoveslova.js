@@ -96,7 +96,7 @@ export default function KlucoveSlova (props){
         }
 
     function rekurzivneZobrazSlova(slovo,cislo,index){
-        return <div key ={index} >
+        return <div key ={index} style={{whiteSpace:'nowrap', width:'300px'}} >
                     <input  type="checkbox" id={slovo.id} 
                         name={`slovo${slovo.id}`} 
                         value = {slovo.nazovKlucovehoSlova} 
@@ -112,7 +112,7 @@ export default function KlucoveSlova (props){
         function zobrazKlucoveSlova(){
     
            return <div className = "klucove">
-                     <div className = "card col-md-12 offset-md-3 offset-md-3">
+                     <div className = "card col-md-12 offset-md-3 offset-md-3" style={{width:'400px', overflowX:'scroll'}}>
                                 <h3 className="text-center">Kľúčové Slová </h3>                
                         <div className = "card-body">           
                             {zobraz()}
