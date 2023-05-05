@@ -1,0 +1,146 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+} 
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.footer {
+  position: relative;
+  bottom: 0;
+  width:100%;
+  height: 50px;
+  background-color: black;
+  text-align: center;
+  color: white;
+}
+.kategorie{
+  float: left;
+  padding-right: 2%;
+  
+}
+  .odkazyOd{
+    float: left;
+    width: 250px;
+   /* overflow:scroll;*/ 
+  }
+
+  .odkazyNa{
+    float: right;
+    width: 250px;
+    /*overflow:scroll;*/ 
+  }
+  @media  (max-width: 600px) {
+    .odkazyNa{
+      float: right;
+      width: 500px;
+      /*overflow:scroll;*/ 
+    }
+  }
+  .klucove{
+    float: right;
+  }
+  
+  .odporucane{
+    float: left;
+  }
+
+  .upravTlacidlo{
+    padding: 0px 4px !important;
+    font-size: 20px !important;
+    text-align: center !important;
+    margin-left: 5px !important;
+    margin-bottom: 4px !important;
+  }
+  .selcnf{
+    width: 200px !important;
+    margin-bottom: 5px !important;
+  }
+  .pridajcnf{
+    margin-left: 20px;
+    height: 37px;
+  }
+  .divcnf{
+    margin-left: 200px !important;
+    margin-right: 200px !important;
+  }
+  .obrazok{
+    height: 30px;
+  }
+
+  .upravKategoriaInput{
+    width: 200px !important;
+    margin-right: 5px !important;
+    margin-left: 5px !important;
+  }
+  .nastaveniaOdporucane{
+    float:right
+  }
+ 
+
+ 
+  .menoCell{
+    max-width: 200px;
+   /* white-space: nowrap;*/
+    overflow: hidden;
+    /*  text-overflow: ellipsis; */
+  }
+
+  .atribut{
+    margin-bottom: 10px !important; 
+    font-weight: bold;
+    
+  }
+
+  .chyba{
+    color : red;
+  }
+ 
+
+.rout{
+  min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.container {
+  min-height: 100vh;
+  
+}
+ 
+
+ 
+  
+  
+  
+
