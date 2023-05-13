@@ -450,7 +450,7 @@ export default function Zobrazformular (props){
 
 return(
     <div>
-        {console.log(formData)}
+      
             <Klucoveslova slova={pridajSlovaKzaznamu} update={props.update} slovaZaznamu={formData.klucoveSlova} odp ={props.odporucaneSlova}/>      
             <div className = "container">
                     <div className = "row">

@@ -15,6 +15,7 @@ import CnfVyhladavanie from './CnfVyhladavanie';
     const [odporucaneAtributy,setOdporucaneAtributy]        = useState([])
 
     useEffect(()=> {
+       
         Spojenie.getZaznamy().then(res => {
             setZaznamy(res.data);
         });

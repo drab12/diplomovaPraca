@@ -130,7 +130,6 @@ export default function UpdateZaznam() {
                 setFormData(stare => { return {...stare, klucoveSlova:data}})
             }
             if(nazov== "vymazane"){
-                console.log(data)
                 setVymazData(data)
             } 
             if(nazov === "vymazform"){

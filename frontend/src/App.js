@@ -9,6 +9,8 @@ import DetailZaznam from './komponenty/DetailZaznam';
 import UpdateKlucoveSlova from './komponenty/UpdateKlucoveSlova';
 import PridajKategoria from './komponenty/PridajKategoria';
 import UpravKategoria from './komponenty/UpravKategoria';
+import Prihlasovanie from './komponenty/Prihlasovanie';
+import Heslo from './komponenty/Heslo';
 
 function App() {
   return (
@@ -19,7 +21,7 @@ function App() {
               
                 
                     <Routes> 
-                          <Route path = "/" exact element = {<ListZaznam />}/>
+                          <Route path = "/" exact element = {<Prihlasovanie />}/>
                           <Route path = "/zaznamy" element = {<ListZaznam />}/>
                           <Route path = "/pridajZaznam/:id" element = {<PridajZaznam/>}/>
                           <Route path = "/updateZaznam/:id" element = {<UpdateZaznam/>}/>
@@ -27,6 +29,7 @@ function App() {
                           <Route path = "/updateklucove" element = {<UpdateKlucoveSlova/>}/>
                           <Route path = "/pridajkategoriu" element = {<PridajKategoria/>}/>
                           <Route path = "/upravkategoriu/:id" element = {<UpravKategoria/>}/>
+                          <Route path = "/heslo" element = {<Heslo/>}/>
                           
                         
                     </Routes>

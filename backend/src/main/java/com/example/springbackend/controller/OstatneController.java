@@ -5,6 +5,7 @@ import com.example.springbackend.entity.*;
 import com.example.springbackend.repozitare.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -25,6 +26,21 @@ public class OstatneController {
     private KalendarRepozitar kalendarRepozitar;
     @Autowired
     private PrilohaRepozitar prilohaRepozitar;
+    @Autowired
+    private UzivatelRepozitar uzivatelRepozitar;
+
+
+    @PutMapping("/noveheslo")
+    public ResponseEntity<Boolean> pridajAtributy( @RequestParam("heslo") String heslo ){
+
+        Uzivatel uzivatel = uzivatelRepozitar.findAll().get(0);
+
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        uzivatel.setPassword(encoder.encode(heslo));
+        uzivatelRepozitar.save(uzivatel);
+        return ResponseEntity.ok(true);
+
+    }
 
     @GetMapping("/kalendar")
     public List<PodujatieKalendar> getKalendar(){
