@@ -34,7 +34,7 @@ const url = "http://localhost:8072/api/";
         return axios.get(url + "zaznamy/hladane/"  +hladany,{ headers: prihlasToken() });
     }
     getZaznamHladanePoznamky(hladany){
-        return axios.get( url + "zaznamy/hladane/poznamky/"  +hladany),{ headers: prihlasToken() };
+        return axios.get( url + "zaznamy/hladane/poznamky/"  +hladany,{ headers: prihlasToken() });
     }
     getZaznamyHladaneCNF(hladany){
         return axios.get(url + "zaznamy/hladane/cnf/"  +hladany,{ headers: prihlasToken() });
@@ -60,7 +60,7 @@ const url = "http://localhost:8072/api/";
         return axios.put( url + "klucove/" ,klucoveId,{ headers: prihlasToken() });
     }
     vymazKlucove(klucoveId){
-        return axios.delete(url + "klucove/" + klucoveId),{ headers: prihlasToken() };
+        return axios.delete(url + "klucove/" + klucoveId, { headers: prihlasToken() });
     }
     getOdporucane(zaznam){
         return axios.post( url + "klucove/odporucane",zaznam,{ headers: prihlasToken() });

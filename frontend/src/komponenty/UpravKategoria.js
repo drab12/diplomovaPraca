@@ -60,6 +60,19 @@ export default function PridajKategoria(){
                     ||povodneAtributy.nazvy.atributy[i].typ !== kategoria.atributy[i].typ){
                     return zmeneneData()
                 }
+                if(povodneAtributy.nazvy.atributy[i].typ === "select"){
+                    
+                    if(povodneAtributy.nazvy.atributy[i].enumerate.length !== kategoria.atributy[i].enumerate.length ){
+                        return zmeneneData()
+                    }
+                    else{
+                        for(let j=0; j< povodneAtributy.nazvy.atributy[i].enumerate.length;j++){
+                            if(povodneAtributy.nazvy.atributy[i].enumerate[j].hodnota !== kategoria.atributy[i].enumerate[j].hodnota){
+                                return zmeneneData()
+                            }
+                        }
+                    }
+                }
             }
             
         }
@@ -84,7 +97,7 @@ export default function PridajKategoria(){
             else{
                 if(meno ==="selectNovy"){
                     let atributselectuNovy = novyAtribut.enumerate
-                    atributselectuNovy[id]=hodnota
+                    atributselectuNovy[id].hodnota =hodnota
                     setNovyAtribut(stareData => {
                     return { ...stareData,enumerate: atributselectuNovy}})
                 }
@@ -92,7 +105,7 @@ export default function PridajKategoria(){
                     if(meno.includes("selectPridaj")){
                         let index = meno.substring(12,meno.length);
                         let atributselectu = kategoria.atributy
-                        atributselectu[index].enumerate[id] =hodnota
+                        atributselectu[index].enumerate[id].hodnota =hodnota
                         setKategoria( stareData => {
                         return { ...stareData,atributy: atributselectu }})
                     }
@@ -173,6 +186,13 @@ export default function PridajKategoria(){
 
 
     function select(atr,id,nazov){
+        let atribut = '';
+        if(id === -1){
+            atribut = atr
+        }
+        else{
+            atribut = kategoria.atributy[id]
+        }
         return <div >
                     <button className="btn btn-primary" 
                             type = "button" 
@@ -180,12 +200,12 @@ export default function PridajKategoria(){
                             onClick= {() => {
                                 if(id ===-1){
                                     let pole = novyAtribut.enumerate;
-                                    pole.push('');
+                                    pole.push({hodnota:''});
                                     setNovyAtribut(stare => { return {...stare, enumerate:pole}})
                                 }
                                 else{
                                     let pole = kategoria.atributy;
-                                    pole[id].enumerate.push('');
+                                    pole[id].enumerate.push({hodnota:''});
                                     setKategoria( stare => {return { ...stare,atributy: pole}})
                                 }   
                             }}> 
@@ -193,7 +213,7 @@ export default function PridajKategoria(){
                     </button>
 
                     <br></br>
-                    {atr.enumerate.map((prvok,index) => { 
+                    {atribut.enumerate.map((prvok,index) => { 
                         let pole =[]
                         if(id ===-1){
                             pole = novyAtribut.enumerate
@@ -205,7 +225,7 @@ export default function PridajKategoria(){
                                     <input id ={index} className="form-control upravKategoriaInput"
                                            placeholder= "atribút selectu" 
                                            name= {nazov}
-                                           value={atr.enumerate[index]} onChange={handleChange}
+                                           value={atribut.enumerate[index].hodnota} onChange={handleChange}
                                            />
                                
                                     <button className="btn btn-danger upravTlacidlo"
@@ -223,9 +243,16 @@ export default function PridajKategoria(){
         if(id !== -1){
             pole[id].enumerate = pole[id].enumerate.filter((item, i) => i !== index);
             if(pole[id].enumerate.length===0){
-                pole = pole.filter((item, i) => i !== id);
+                if(id === -1){
+                    vymazAtribut(id,pole,undefined)
+                }
+                else{
+                    vymazAtribut(id,pole,pole[id].id)
+                }
             }
+            else{
             setKategoria( stare => {return { ...stare,atributy : pole}})
+            }
         }
         else{
             pole= pole.filter((item, i) => i !== index); 
@@ -302,6 +329,7 @@ export default function PridajKategoria(){
     return(
     
     <div>  
+         {console.log(kategoria)}
         <br></br>      
            <div className = "container">
                 <div className = "row">

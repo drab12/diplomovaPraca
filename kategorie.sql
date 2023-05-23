@@ -108,6 +108,33 @@
  (98,'Softvérové požiadavky','textarea',13),
  (99,'Automatický backup','checkbox',13);
  
+ 
+ INSERT INTO `enum` VALUES (1,'ÄŚlĂˇnok',15),
+ (2,'Konference paper',15),
+ (3,'Kapitola knihy',15),
+ (4,'Kniha',15),
+ (5,'Žurnál',15),
+ (6,'Nepublikované',15),
+ (7,'Budúci',28),
+ (8,'Bežiaci',28),
+ (9,'Uzavretý',28),
+ (10,'Diplomová práca',32),
+ (11,'Bakalárska práca',32),
+ (12,'Článok',32),
+ (13,'Projekt',32),
+ (14,'Výstava',50),
+ (15,'Workshop',50),
+ (16,'Školenie',50),
+ (17,'Súťaž',50),
+ (18,'Deň otvorených dverí',50),
+ (19,'Prípravný týždeň',50),
+ (20,'Letná škola',50),
+ (21,'Bakalárska práca',79),
+ (22,'Diplomová práca',79),
+ (23,'Dizertačná práca',79),
+ (24,'Vedúci',82),
+ (25,'Konzultant',82);
+ 
   SET FOREIGN_KEY_CHECKS=1;
 
  
